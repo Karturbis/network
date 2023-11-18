@@ -59,8 +59,13 @@ public class Client implements Runnable{
             try{
                 BufferedReader inReader = new BufferedReader(new InputStreamReader(System.in));
                 while(!done){
-                    String message = inReader.readLine();
+                    String message = inReader.readLine();// closes client connection
                     if(message.equals("/quit")){
+                        inReader.close();
+                        shutdown();
+                    }
+                    else if(message.equals("/shutdown")){// shuts down the server and than closes the cliet connection.
+                        out.println("/quit");
                         inReader.close();
                         shutdown();
                     }
