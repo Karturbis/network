@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import javax.naming.ldap.SortKey;
-
 public class Client implements Runnable{
 
     private Socket client;
